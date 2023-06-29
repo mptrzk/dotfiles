@@ -154,6 +154,10 @@ function lnotes() {
   fi
 }
 
+if [ -n "$(uname -a | grep Ubuntu)" ]; then
+  alias python='python3'
+  alias fd='fdfind'
+fi
 
 alias duh='du -h -s * | sort -h'
 alias q='exit'
