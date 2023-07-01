@@ -154,9 +154,15 @@ function lnotes() {
   fi
 }
 
+
 if [ -n "$(uname -a | grep Ubuntu)" ]; then
   alias python='python3'
   alias fd='fdfind'
+fi
+
+
+if [[ `ps ho command $(ps ho ppid $$)` == 'urxvt' ]]; then
+  clear
 fi
 
 alias duh='du -h -s * | sort -h'
@@ -176,3 +182,4 @@ export PATH+=":~/bin:~/nh/install/games:~/.yarn/bin:~/.local/bin"
 #alias crawl='echo nope'
 
 export HOSTALIASES='~/.hosts'
+
