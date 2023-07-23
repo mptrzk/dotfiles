@@ -14,8 +14,19 @@ map gr gT
 syntax on
 
 
-"vnoremap <C-C> :w !xclip -i -sel c<CR><CR>
-"inoremap <C-V> <Esc>:r !xsel -b<CR>a
+" Assign "visual block" mode to C-b instead of C-v
+nnoremap <C-b> <C-v>
+vnoremap <C-b> <C-v>
+
+" Assign yanking to "+" register to C-c
+nnoremap <C-c> "+y
+vnoremap <C-c> "+y
+
+" Assign pasting from "+" register to C-v
+nnoremap <C-v> "+p
+vnoremap <C-v> "+p
+
+
 inoremap <c-l> λ
 
 let g:slimv_swank_cmd='!urxvt -e sbcl --load "/home/ryj/.vim/slime/start-swank.lisp" &'
