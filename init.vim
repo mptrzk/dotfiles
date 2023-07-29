@@ -62,7 +62,7 @@ let g:python_recommended_style = 0
 
 call plug#begin()
 Plug 'jelera/vim-javascript-syntax'
-Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+Plug 'wookayin/semshi', { 'do': ':UpdateRemotePlugins' }
 Plug 'jpalardy/vim-slime'
 call plug#end()
 
