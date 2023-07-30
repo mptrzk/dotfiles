@@ -154,6 +154,14 @@ function lnotes() {
   fi
 }
 
+function bgkill() {
+  if [ -n "$(jobs -p)" ]; then
+    kill -9 $(jobs -p)
+  else
+    echo "no background jobs"
+  fi
+}
+
 
 if [ -n "$(uname -a | grep Ubuntu)" ]; then
   alias python='python3'
@@ -182,4 +190,5 @@ export PATH+=":~/bin:~/nh/install/games:~/.yarn/bin:~/.local/bin"
 #alias crawl='echo nope'
 
 export HOSTALIASES='~/.hosts'
+
 
