@@ -13,9 +13,6 @@ map gr gT
 syntax on
 
 
-set guicursor=i:block
-set signcolumn=yes:1
-highlight SignColumn guibg=black
 
 " Assign "visual block" mode to C-b instead of C-v
 nnoremap <C-b> <C-v>
@@ -41,9 +38,17 @@ nmap ,d <Plug>SlimeParagraphSend
 nmap ,b :%SlimeSend<cr>
 nmap ,c <Plug>SlimeConfig
 
+"TODO make that for each language you use
+nmap ,a Iassert(<esc>A<space>==<space>)<esc>i
+nmap ,A Iassert(<esc>A)<esc>j
+
 nmap <C-space> <Plug>SlimeParagraphSend
 nmap <C-g> :%SlimeSend<cr>
 imap <C-space> <Esc><Plug>SlimeParagraphSenda
+
+set guicursor=i:block
+set signcolumn=yes:1
+highlight SignColumn guibg=black
 
 
 let g:slimv_swank_cmd='!urxvt -e sbcl --load "/home/ryj/.vim/slime/start-swank.lisp" &'
@@ -64,5 +69,6 @@ call plug#begin()
 Plug 'jelera/vim-javascript-syntax'
 Plug 'wookayin/semshi', { 'do': ':UpdateRemotePlugins' }
 Plug 'jpalardy/vim-slime'
+Plug 'vim-scripts/paredit.vim'
 call plug#end()
 
