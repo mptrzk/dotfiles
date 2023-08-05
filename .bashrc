@@ -179,6 +179,7 @@ alias k='cat ~/kbd'
 alias f='find . -name'
 alias updot='cp -r ~/.bashrc ~/.vimrc ~/.config/i3 ~/.config/i3status ~/repy/dotfiles'
 alias octave='octave --gui'
+alias vlime-start='sbcl --load ~/.local/share/nvim/plugged/vlime/lisp/start-vlime.lisp'
 
 export VISUAL EDITOR='vim'
 export BROWSER='hr'
