@@ -13,7 +13,6 @@ map gr gT
 syntax on
 
 
-
 " Assign "visual block" mode to C-b instead of C-v
 nnoremap <C-b> <C-v>
 vnoremap <C-b> <C-v>
@@ -38,6 +37,7 @@ nmap ,d <Plug>SlimeParagraphSend
 nmap ,b :%SlimeSend<cr>
 nmap ,c <Plug>SlimeConfig
 
+
 "TODO make that for each language you use
 nmap ,a Iassert(<esc>A<space>==<space>)<esc>i
 nmap ,A Iassert(<esc>A)<esc>j
@@ -51,11 +51,7 @@ set signcolumn=yes:1
 highlight SignColumn guibg=black
 
 
-let g:slimv_swank_cmd='!urxvt -e sbcl --load "/home/ryj/.vim/slime/start-swank.lisp" &'
-let g:slimv_repl_split=4
-
 let g:lisp_rainbow=1
-let g:slimv_timeout=1
 
 let g:python_recommended_style = 0
 
