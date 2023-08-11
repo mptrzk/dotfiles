@@ -9,6 +9,7 @@ set expandtab
 set mouse=a
 set relativenumber
 set autoindent
+set nohlsearch
 map gr gT
 syntax on
 
