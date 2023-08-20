@@ -15,6 +15,7 @@ syntax on
 
 
 " Assign "visual block" mode to C-b instead of C-v
+nnoremap <C-n> <C-v>
 nnoremap <C-b> <C-v>
 vnoremap <C-b> <C-v>
 
@@ -38,10 +39,21 @@ nmap ,d <Plug>SlimeParagraphSend
 nmap ,b :%SlimeSend<cr>
 nmap ,c <Plug>SlimeConfig
 
+"wslime stuff
+function! WslimeStuff()
+  nmap ,r :SlimeSend1 location.reload()<cr>
+  nmap ,a Iconsole.assert(<esc>A<space>===<space>)<esc>i
+  nmap ,A Iassert(<esc>A)<esc>i
+endfunction
+autocmd FileType javascript call WslimeStuff()
 
-"TODO make that for each language you use
-nmap ,a Iassert(<esc>A<space>==<space>)<esc>i
-nmap ,A Iassert(<esc>A)<esc>j
+"python slime stuff
+function! PythonStuff()
+  nmap ,a Iassert(eq(<esc>A))<esc>hi
+  nmap ,A Iassert(<esc>A)<esc>
+endfunction
+autocmd FileType python call PythonStuff()
+
 
 nmap <C-space> <Plug>SlimeParagraphSend
 nmap <C-g> :%SlimeSend<cr>
@@ -67,5 +79,6 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'wookayin/semshi', { 'do': ':UpdateRemotePlugins' }
 Plug 'jpalardy/vim-slime'
 Plug 'vim-scripts/paredit.vim'
+Plug 'puremourning/vimspector'
 call plug#end()
 
